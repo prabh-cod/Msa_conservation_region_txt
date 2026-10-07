@@ -1,0 +1,33 @@
+artifacts = [
+    "/root/solution/conservation_report.txt"
+]
+
+[metadata]
+expert_time_estimate_hours = 1
+domain = "life-sciences"
+field = "biology"
+subfield = "bioinformatics"
+tags = ["genomics", "msa", "entropy", "python"]
+
+[task]
+name = "genome-inference"
+description = "Calculate Shannon entropy across a multiple sequence alignment to find the most conserved 15-bp window."
+
+[environment]
+image = "python:3.10-slim"
+memory_mb = 4096
+storage_mb = 2048
+cpus = 2
+gpus = 0
+network_mode = "public"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 600.0
+environment_mode = "separate"
+
+[verifier.environment]
+image = "python:3.10-slim"
+network_mode = "no-network"

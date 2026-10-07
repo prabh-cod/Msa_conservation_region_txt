@@ -1,0 +1,9 @@
+root@host:/# docker build -t agent-env -f environment/Dockerfile .
+root@host:/# docker run --network none -v $(pwd)/solution:/root/solution agent-env bash /root/solution/solve.sh
+root@host:/# cat solution/conservation_report.txt
+Most conserved 15-bp window starts at: 0 with entropy: 0.0221
+root@host:/# pytest tests/test_outputs.py
+============================= test session starts ==============================
+collected 1 item
+tests/test_outputs.py .                                                  [100%]
+============================== 1 passed in 0.45s ===============================

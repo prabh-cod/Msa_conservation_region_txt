@@ -1,0 +1,4 @@
+# T1-CANARY
+pandas==2.2.2
+biopython==1.83
+scikit-learn==1.4.2
